@@ -16,11 +16,6 @@ jobs:
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Login to DockerHub
-        uses: docker/login-action@v1 
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1 
         with:
@@ -33,7 +28,6 @@ jobs:
         with:
           push: true
           tags: |
-            gibibyte/rclone-supercronic:latest
-            ghcr.io/0xdafe/rclone-supercronic:latest
+            ghcr.io/FueledbyJordan/rclone-supercronic:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
