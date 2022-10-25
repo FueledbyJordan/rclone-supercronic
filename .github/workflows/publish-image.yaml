@@ -28,6 +28,6 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/FueledbyJordan/rclone-supercronic:latest
+            ghcr.io/fueledbyjordan/rclone-supercronic:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
