@@ -1,5 +1,5 @@
 FROM rclone/rclone:latest
-RUN apk add --no-cache curl su-exec supercronic
+RUN apk add --no-cache bash curl su-exec supercronic
 
 # Copy entrypoint script
 COPY /docker-entrypoint.sh /bin/entrypoint.sh
